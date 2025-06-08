@@ -1,0 +1,49 @@
+{
+  "name": "universal-contact-notifier",
+  "version": "1.0.1",
+  "description": "A generic Node.js/TypeScript notifier library to send contact form submissions to Discord via Webhook, with future multi-channel support.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlbertoLinde/universal-contact-notifier"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "contact",
+    "notifier",
+    "discord",
+    "webhook",
+    "typescript",
+    "nodejs",
+    "form",
+    "web-form",
+    "mailing"
+  ],
+  "author": "Alberto Linde <abreulindealberto@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.4.2",
+    "dotenv": "^16.5.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.1.3"
+  }
+}
