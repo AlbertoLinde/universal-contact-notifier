@@ -54,11 +54,16 @@ jobs:
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
 
-      - name: Bump patch version and push
+      - name: Bump patch version and update remote
         run: |
           npm version patch -m "chore(release): v%s [skip ci]"
           git remote set-url origin https://albertolinde:${{ secrets.PERSONAL_GH_TOKEN }}@github.com/AlbertoLinde/universal-contact-notifier.git
-          git push origin main --follow-tags
+
+      - name: Debug remote URL
+        run: git remote -v
+
+      - name: Push version bump
+        run: git push origin main --follow-tags
 
       - name: Publish to npm
         env:
