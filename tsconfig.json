@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "lib": ["ES2020", "DOM"],
-    "types": ["node", "jest"]
+    "types": ["node"]
   },
   "include": ["src/**/*"]
 }

@@ -28,6 +28,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Type check tests (optional)
+        run: npx tsc --project tsconfig.test.json
+
       - name: Run tests
         run: npm test
 
@@ -42,9 +45,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credentials: false 
+          persist-credentials: false
 
-      - name: Set git identity (as user)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: https://registry.npmjs.org/
+
+      - name: Set git identity
         run: |
           git config --global user.name "${{ secrets.GIT_USER_NAME }}"
           git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
@@ -53,7 +62,7 @@ jobs:
         run: |
           git remote set-url origin https://albertolinde:${{ secrets.PERSONAL_GH_TOKEN }}@github.com/AlbertoLinde/universal-contact-notifier.git
 
-      - name: Debug remote URL
+      - name: Debug remote
         run: git remote -v
 
       - name: Bump patch version
