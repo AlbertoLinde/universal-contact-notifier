@@ -1,6 +1,6 @@
 {
   "name": "universal-contact-notifier",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A generic Node.js/TypeScript notifier library to send contact form submissions to Discord via Webhook, with future multi-channel support.",
   "main": "dist/index.js",
   "module": "dist/index.js",
